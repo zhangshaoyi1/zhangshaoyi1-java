@@ -1,0 +1,26 @@
+package Test;
+/**
+ * 线程的加入
+ * 爸爸让儿子去买烟
+ * @author zsy
+ *
+ */
+public class joinTest {
+
+}
+class father implements Runnable{
+
+	@Override
+	public void run() {
+		System.out.println("爸爸让儿子去买烟");
+	}
+	
+}
+class son implements Runnable{
+
+	@Override
+	public void run() {
+		
+	}
+	
+}

@@ -1,0 +1,22 @@
+/**
+ * implements Runnable
+ * @author Administrator
+ *
+ */
+public class Thread1 implements Runnable{
+
+	@Override
+	public void run() {
+		for (int i = 0; i < 1000; i++) {
+			System.out.println(Thread.currentThread().getName());
+		}
+	}
+	public static void main(String[] args) {
+		Thread1 R =new Thread1();
+		new Thread(R,"___________________").start();;
+		new Thread(R,"********************").start();;
+	}
+	
+	
+
+}

@@ -1,0 +1,50 @@
+package Test;
+/**
+ * 线程的加入
+ * 爸爸让儿子去买烟
+ * @author zsy
+ *
+ */
+public class joinTest {
+
+	public static void main(String[] args) {
+		new Thread(new father()).start();
+	}
+}
+class father implements Runnable{
+
+	@Override
+	public void run() {
+		System.out.println("爸爸让儿子去买烟");
+		Thread tt = new Thread(new son());
+		tt.start();
+		try {
+			tt.join(5000);
+			System.out.println("儿子不见了，去找儿子");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+}
+class son implements Runnable{
+
+	@Override
+	public void run() {
+		System.out.println("儿子去买烟");
+		System.out.println("看到游戏厅");
+		for(int i = 0 ; i < 10 ; i++) {
+			System.out.println("第"+i+"小时过去了");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		System.out.println("买烟回家");
+		
+	}
+	
+}

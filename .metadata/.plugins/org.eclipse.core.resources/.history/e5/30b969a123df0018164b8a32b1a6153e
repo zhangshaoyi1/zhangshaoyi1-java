@@ -1,0 +1,10 @@
+package Test;
+/**
+ * 线程的加入
+ * 爸爸让儿子去买烟
+ * @author zsy
+ *
+ */
+public class joinTest {
+
+}
